@@ -14,7 +14,7 @@
 //import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import currentSong from "./components/CurrentSong";
 import songList from "./components/SongList";
-import _ from "lodash";
+
 export default {
   name: "App",
   data() {
@@ -199,10 +199,6 @@ export default {
         this.currentsong = null;
         this.audioElement = null;
       });
-    },
-    handleDelete: function(payload) {
-      const updatedArray = _.without(this.songs, payload); // delete the current song from the songs array
-      this.songs = updatedArray;
     }
   },
   components: {

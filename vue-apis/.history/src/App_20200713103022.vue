@@ -1,12 +1,7 @@
 <template>
   <div id="app" class="container">
     <current-song :song="currentsong" v-if="currentsong" />
-    <song-list
-      :songs="songs"
-      :currentSong="currentSong"
-      @handlePlay="handlePlay"
-      @handleDelete="handleDelete"
-    />
+    <song-list :songs="songs" :currentSong="currentSong" @handlePlay="handlePlay" />
   </div>
 </template>
 
@@ -14,7 +9,7 @@
 //import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import currentSong from "./components/CurrentSong";
 import songList from "./components/SongList";
-import _ from "lodash";
+
 export default {
   name: "App",
   data() {
@@ -188,21 +183,9 @@ export default {
           } else {
             this.audioElement.pause();
           }
-        } else {
-          // if a new song then change the src and play it
-          this.audioElement.src = payload.music_url;
-          this.audioElement.play();
         }
       }
       this.currentsong = payload;
-      this.audioElement.addEventListener("ended", () => {
-        this.currentsong = null;
-        this.audioElement = null;
-      });
-    },
-    handleDelete: function(payload) {
-      const updatedArray = _.without(this.songs, payload); // delete the current song from the songs array
-      this.songs = updatedArray;
     }
   },
   components: {

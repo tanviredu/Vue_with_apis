@@ -1,26 +1,18 @@
 <template>
   <div id="app" class="container">
-    <current-song :song="currentsong" v-if="currentsong" />
-    <song-list
-      :songs="songs"
-      :currentSong="currentSong"
-      @handlePlay="handlePlay"
-      @handleDelete="handleDelete"
-    />
+    <current-song :song="currentSong" />
   </div>
 </template>
 
 <script>
 //import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import currentSong from "./components/CurrentSong";
-import songList from "./components/SongList";
-import _ from "lodash";
+
 export default {
   name: "App",
   data() {
     return {
-      currentsong: null,
-      audioElement: null,
+      currentSong: null,
       songs: [
         {
           id: "1",
@@ -175,40 +167,9 @@ export default {
       ]
     };
   },
-  methods: {
-    handlePlay: function(payload) {
-      if (this.audioElement == null) {
-        this.audioElement = new Audio(payload.music_url);
-        this.audioElement.play();
-      } else {
-        // if the song is already plaing and you hit anohter
-        if (payload == this.currentsong) {
-          if (this.audioElement.paused) {
-            this.audioElement.play();
-          } else {
-            this.audioElement.pause();
-          }
-        } else {
-          // if a new song then change the src and play it
-          this.audioElement.src = payload.music_url;
-          this.audioElement.play();
-        }
-      }
-      this.currentsong = payload;
-      this.audioElement.addEventListener("ended", () => {
-        this.currentsong = null;
-        this.audioElement = null;
-      });
-    },
-    handleDelete: function(payload) {
-      const updatedArray = _.without(this.songs, payload); // delete the current song from the songs array
-      this.songs = updatedArray;
-    }
-  },
   components: {
     //FontAwesomeIcon,
-    currentSong,
-    songList
+    currentSong
   }
 };
 </script>

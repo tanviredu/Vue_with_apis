@@ -200,10 +200,7 @@ export default {
         this.audioElement = null;
       });
     },
-    handleDelete: function(payload) {
-      const updatedArray = _.without(this.songs, payload); // delete the current song from the songs array
-      this.songs = updatedArray;
-    }
+    handleDelete: function() {}
   },
   components: {
     //FontAwesomeIcon,
