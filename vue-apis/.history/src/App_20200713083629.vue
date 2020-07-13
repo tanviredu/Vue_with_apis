@@ -3,7 +3,7 @@
     <div class="mt-3">
       <h1 class="display-4" style="font-family: 'Fjalla One'">{{name}}</h1>
     </div>
-    <font-awesome-icon icon="play" @click="showDescription = !showDescription" />
+    <font-awesome-icon icon="play" />
     <div v-if="showDescription" class="jumbotron">
       <div style="font-family: 'Open Sans', sans-serif;">{{description}}</div>
     </div>
