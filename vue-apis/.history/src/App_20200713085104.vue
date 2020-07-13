@@ -17,11 +17,11 @@ export default {
         description:
           "Tempor anim occaecat in ad consectetur sit sunt Lorem cupidatat eiusmod."
       }
-    };
-  },
-  components: {
-    //FontAwesomeIcon,
-    currentSong
+    },
+    components: {
+      //FontAwesomeIcon,
+      currentSong;
+    }
   }
 };
 </script>

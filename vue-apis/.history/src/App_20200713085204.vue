@@ -19,11 +19,12 @@ export default {
       }
     };
   },
-  components: {
-    //FontAwesomeIcon,
-    currentSong
+    components: {
+      //FontAwesomeIcon,
+      currentSong;
+    }
   }
-};
+
 </script>
 
 <style>

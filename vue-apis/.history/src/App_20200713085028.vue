@@ -12,18 +12,16 @@ export default {
   name: "App",
   data() {
     return {
-      currentSong: {
+      currentSong:{
         name: "Its my Life",
-        description:
-          "Tempor anim occaecat in ad consectetur sit sunt Lorem cupidatat eiusmod."
+        description : "Tempor anim occaecat in ad consectetur sit sunt Lorem cupidatat eiusmod."
       }
-    };
   },
   components: {
     //FontAwesomeIcon,
     currentSong
   }
-};
+}
 </script>
 
 <style>

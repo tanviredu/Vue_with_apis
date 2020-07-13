@@ -5,8 +5,8 @@
         <div class="currentsong-backgroundimage position-absolute"></div>
         <div class="song-info d-flex justify-content-center align-items-center py-5">
           <div class="item container">
-            <div class="row justify-content-center jumbotron">
-              <div class="song col-md-8 text-center">
+            <div class="row justify-content-center">
+              <div class="song col-md-8 text-center jumbotron">
                 <h1 class="song-name" style="font-family: 'Fjalla One'">{{song.name}}</h1>
               </div>
               <div class="song col-md-12 text-center">

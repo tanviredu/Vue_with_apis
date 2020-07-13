@@ -16,12 +16,12 @@ export default {
         name: "Its my Life",
         description:
           "Tempor anim occaecat in ad consectetur sit sunt Lorem cupidatat eiusmod."
-      }
-    };
-  },
-  components: {
-    //FontAwesomeIcon,
-    currentSong
+      };
+    },
+    components: {
+      //FontAwesomeIcon,
+      currentSong;
+    }
   }
 };
 </script>
