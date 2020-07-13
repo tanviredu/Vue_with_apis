@@ -58,7 +58,7 @@ export default {
   created() {
     // created starts when the page load at first
     axios({
-      url: "https://orangevalleycaa.org/api/music",
+      url: "https://orangevalleycaa.org/api/musicasas",
     })
       .then((res) => {
         this.songs = res.data;
